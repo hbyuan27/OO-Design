@@ -1,7 +1,6 @@
 package ood.position;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Vector;
 
 import ood.observer.IObserver;
 import ood.user.Candidate;
@@ -13,7 +12,8 @@ public class AbstractPosition implements IPosition {
 	private PositionType type;
 	private Manager manager;
 	private HR hr;
-	private List<IObserver> observerList = new ArrayList<IObserver>();
+	// NOTE: use vector instead of List since it is thread-safe
+	private Vector<IObserver> observerList = new Vector<IObserver>();
 
 	public AbstractPosition(PositionType type) {
 		this.type = type;
